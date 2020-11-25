@@ -20,6 +20,7 @@ app.use(express.json());
 
 //Router
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/events', require('./routes/events'));
 
 app.listen( process.env.PORT, () => {
     console.log(`Server running port ${ process.env.PORT }`);

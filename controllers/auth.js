@@ -67,7 +67,7 @@ const loginUser = async(req, res = response) => {
         //JWT
         const token = await generateJWT(user.id, user.name);
 
-        res.status(200).json ({
+        res.json ({
             ok: true,
             uid: user.id,
             name: user.name,
@@ -75,11 +75,11 @@ const loginUser = async(req, res = response) => {
         })
 
     } catch (error) {
-        
+        console.log(error)
     }
 }
 
-const validateToken = async(req, res = response) => {
+const revalidateToken = async(req, res = response) => {
 
     const {uid, name} = req
 
@@ -94,5 +94,5 @@ const validateToken = async(req, res = response) => {
 module.exports = {
     createUser,
     loginUser,
-    validateToken
+    revalidateToken
 }
