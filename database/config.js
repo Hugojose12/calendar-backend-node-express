@@ -9,11 +9,10 @@ const dbConnection = async() => {
             useCreateIndex: true
         });
 
-        console.log("db online")
+        console.log(" db online ")
 
-    } catch(error) {
-        console.log(error);
-        throw new Error('error connection db');
+    } catch (error) {
+        console.log(error)
     }
 }
 
